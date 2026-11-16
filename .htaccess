@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Retire the unrelated legacy loan-product URLs and route visitors to the current services page.
+RewriteRule ^services/.*\.php$ /?page=services [R=301,L]
+
+# Give each Alpha Geo service a readable standalone URL.
+RewriteRule ^services/([a-z0-9-]+)/?$ index.php?page=service&service=$1 [QSA,L,NC]
+
+# Keep unsupported page query values inside the six-page site map.
+RewriteCond %{QUERY_STRING} (^|&)page=(?!home(?:&|$)|about(?:&|$)|services(?:&|$)|projects(?:&|$)|careers(?:&|$)|contact(?:&|$)) [NC]
+RewriteRule ^$ /? [R=302,L]

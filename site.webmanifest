@@ -1,0 +1,10 @@
+{
+  "name": "Alpha Geo-Engineering Limited",
+  "short_name": "Alpha Geo",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "theme_color": "#102942",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

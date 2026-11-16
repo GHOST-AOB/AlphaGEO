@@ -1,0 +1,16 @@
+version: '3.8'
+
+# Development compose overlay: Mounts local working directory into container
+services:
+  alpha-geo-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: alpha-geo-engineering:dev
+    container_name: alpha_geo_engineering_dev
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - APP_ENV=development
